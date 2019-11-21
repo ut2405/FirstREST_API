@@ -1,5 +1,5 @@
 const Data = require("../models/data_schema");
-
+//List all: Data.find
 const listAll = (req, res) => {
   Data.find({}, (err, data) => {
     if (err) {
@@ -8,7 +8,7 @@ const listAll = (req, res) => {
     res.status(200).json(data);
   });
 };
-
+//Post
 const createNew = (req, res) => {
   let newdt = new Data(req.body);
   newdt.save((err, data) => {
@@ -18,7 +18,7 @@ const createNew = (req, res) => {
     res.status(200).json(data);
   });
 };
-
+//List one: find by id
 const readdt = (req, res) => {
   Data.findById({ _id: req.params.dataId}, (err, data) => {
     if (err) {
@@ -27,7 +27,7 @@ const readdt = (req, res) => {
     res.status(200).json(data);
   });
 };
-
+//List one: find by attribute like : "temp""light""water"...
 const readByChildn=(req,res)=>{
   Data.find({childnode_id:req.params.dataChilId},(err,data)=>{
     if(err){
