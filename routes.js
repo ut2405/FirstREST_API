@@ -13,7 +13,7 @@ require("./config/db");
 router.get('/', dtController.listAll);
 router.post('/', dtController.createNew);
 router.get('/:dataId', dtController.readdt);
-router.get('/child/:dataChilId',dtController.readByChildn)
+router.get('/child/:dataChilId',dtController.readByChildn);
 router.put('/:dataId', dtController.updatedt);
 router.delete('/:dataId', dtController.deletedt);
 

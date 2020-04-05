@@ -10,6 +10,7 @@ const listAll = (req, res) => {
 };
 //Post
 const createNew = (req, res) => {
+  console.log("test here!");
   let newdt = new Data(req.body);
   newdt.save((err, data) => {
     if (err) {
